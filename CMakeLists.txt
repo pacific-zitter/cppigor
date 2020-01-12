@@ -1,3 +1,11 @@
-project(igorpro)
+cmake_minimum_required(VERSION 3.0.0)
+project(igorpro VERSION 0.1.0)
+set(CMAKE_TOOLCHAIN_FILE "C:/Users/jarrison/vcpkg/scripts/buildsystems/vcpkg.cmake")
+include(CTest)
+enable_testing()
+find_package(wil)
+add_library(igorpro igorpro.cpp)
 
-add_executable(igorpro igor.cc)
+set(CPACK_PROJECT_NAME ${PROJECT_NAME})
+set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
+include(CPack)
